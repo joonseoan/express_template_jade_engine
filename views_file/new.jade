@@ -1,0 +1,22 @@
+DOCTYPE
+    html
+        head
+            meta(charset='utf-8')
+        body
+            h1
+                a(href='/topic') Server Side JavaScript(node.js)
+            ul
+                each topic in topics /* jade iteration: "topics" is from /topic route. And "topic" is from here "each topic"*/
+                    li
+                        a(href = '/topic/'+ topic)= topic /*'/topic/' is a route defined in app.get('topic'). 'topic' a tag is value in 'each topic'. and "= topic" outside of "a" tag is a value of "each topic" */
+            article
+                form(action="/topic" method='post')
+                    label Title: 
+                    input(type="text" name="title" placeholder="title")
+                    p
+                    label Description:
+                    br
+                    textarea(name="desc", cols="30", rows="10" placeholder="Type your feeling about title.")
+                    p
+                    input(type="submit" value="Submit")
+
